@@ -1,6 +1,6 @@
 import { browser, element, by } from 'protractor';
 
-export class ArmaTuPaqueteAdminPage {
+export class NgAdminSimpleTemplate {
   navigateTo() {
     return browser.get('/');
   }

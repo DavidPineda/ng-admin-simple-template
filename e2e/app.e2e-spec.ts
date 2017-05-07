@@ -1,10 +1,10 @@
-import { ArmaTuPaqueteAdminPage } from './app.po';
+import { NgAdminSimpleTemplate } from './app.po';
 
-describe('arma-tu-paquete-admin App', () => {
-  let page: ArmaTuPaqueteAdminPage;
+describe('ng-admin-simple-template App', () => {
+  let page: NgAdminSimpleTemplate;
 
   beforeEach(() => {
-    page = new ArmaTuPaqueteAdminPage();
+    page = new NgAdminSimpleTemplate();
   });
 
   it('should display message saying app works', () => {
