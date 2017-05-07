@@ -3,7 +3,8 @@ import { Routes } from '@angular/router';
 
 @Component({
   template: `
-      <h1>Chao Mundo</h1>
+      <ba-sidebar></ba-sidebar>
+      <router-outlet></router-outlet>
     `
 })
 

@@ -13,31 +13,31 @@ import {
   BaThemeConfigProvider
 } from './theme.configProvider';
 
-// import {
-//   BaAmChart,
-//   BaBackTop,
-//   BaCard,
-//   BaChartistChart,
-//   BaCheckbox,
-//   BaContentTop,
-//   BaFullCalendar,
-//   BaMenuItem,
-//   BaMenu,
-//   BaMsgCenter,
-//   BaMultiCheckbox,
-//   BaPageTop,
-//   BaPictureUploader,
-//   BaSidebar,
-//   BaFileUploader
-// } from './components';
+import {
+  // BaAmChart,
+  // BaBackTop,
+  // BaCard,
+  // BaChartistChart,
+  // BaCheckbox,
+  // BaContentTop,
+  // BaFullCalendar,
+  BaMenuItem,
+  BaMenu,
+  // BaMsgCenter,
+  // BaMultiCheckbox,
+  // BaPageTop,
+  // BaPictureUploader,
+  BaSidebar,
+  // BaFileUploader
+} from './components';
 
 // import { BaCardBlur } from './components/baCard/baCardBlur.directive';
 
-// import {
-//   BaScrollPosition,
-//   BaSlimScroll,
-//   BaThemeRun
-// } from './directives';
+import {
+  BaScrollPosition,
+  BaSlimScroll,
+  BaThemeRun
+} from './directives';
 
 // import {
 //   BaAppPicturePipe,
@@ -47,7 +47,7 @@ import {
 
 import {
   BaImageLoaderService,
-  // BaMenuService,
+  BaMenuService,
   BaThemePreloader,
   BaThemeSpinner
 } from './services';
@@ -57,30 +57,30 @@ import {
 //   EqualPasswordsValidator
 // } from './validators';
 
-// const NGA_COMPONENTS = [
-//   BaAmChart,
-//   BaBackTop,
-//   BaCard,
-//   BaChartistChart,
-//   BaCheckbox,
-//   BaContentTop,
-//   BaFullCalendar,
-//   BaMenuItem,
-//   BaMenu,
-//   BaMsgCenter,
-//   BaMultiCheckbox,
-//   BaPageTop,
-//   BaPictureUploader,
-//   BaSidebar,
-//   BaFileUploader
-// ];
+const NGA_COMPONENTS = [
+  // BaAmChart,
+  // BaBackTop,
+  // BaCard,
+  // BaChartistChart,
+  // BaCheckbox,
+  // BaContentTop,
+  // BaFullCalendar,
+  BaMenuItem,
+  BaMenu,
+  // BaMsgCenter,
+  // BaMultiCheckbox,
+  // BaPageTop,
+  // BaPictureUploader,
+  BaSidebar,
+  // BaFileUploader
+];
 
-// const NGA_DIRECTIVES = [
-//   BaScrollPosition,
-//   BaSlimScroll,
-//   BaThemeRun,
-//   BaCardBlur
-// ];
+const NGA_DIRECTIVES = [
+  BaScrollPosition,
+  BaSlimScroll,
+  BaThemeRun
+  // BaCardBlur
+];
 
 // const NGA_PIPES = [
 //   BaAppPicturePipe,
@@ -91,8 +91,8 @@ import {
 const NGA_SERVICES = [
   BaImageLoaderService,
   BaThemePreloader,
-  BaThemeSpinner
-  // BaMenuService
+  BaThemeSpinner,
+  BaMenuService
 ];
 
 // const NGA_VALIDATORS = [
@@ -103,8 +103,8 @@ const NGA_SERVICES = [
 @NgModule({
   declarations: [
     // ...NGA_PIPES,
-    // ...NGA_DIRECTIVES,
-    // ...NGA_COMPONENTS
+    ...NGA_DIRECTIVES,
+    ...NGA_COMPONENTS
   ],
   imports: [
     CommonModule,
@@ -116,8 +116,8 @@ const NGA_SERVICES = [
   ],
   exports: [
     // ...NGA_PIPES,
-    // ...NGA_DIRECTIVES,
-    // ...NGA_COMPONENTS
+    ...NGA_DIRECTIVES,
+    ...NGA_COMPONENTS
   ]
 })
 export class NgaModule {

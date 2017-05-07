@@ -1,5 +1,10 @@
 {
   "login": {
-    "prueba": "Solo es una prueba"
+    "title": "Sign in to atp-admin",
+    "signup_link": "New to atp-admin? Sign up!",
+    "email": "Email",
+    "password": "Password",
+    "sign_in": "Sign in",
+    "forgot_password": "Forgot password?"
   }
 }
