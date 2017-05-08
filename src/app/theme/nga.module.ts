@@ -23,9 +23,9 @@ import {
   // BaFullCalendar,
   BaMenuItem,
   BaMenu,
-  // BaMsgCenter,
+  BaMsgCenter,
   // BaMultiCheckbox,
-  // BaPageTop,
+  BaPageTop,
   // BaPictureUploader,
   BaSidebar,
   // BaFileUploader
@@ -39,11 +39,11 @@ import {
   BaThemeRun
 } from './directives';
 
-// import {
-//   BaAppPicturePipe,
-//   BaKameleonPicturePipe,
-//   BaProfilePicturePipe
-// } from './pipes';
+import {
+  // BaAppPicturePipe,
+  // BaKameleonPicturePipe,
+  BaProfilePicturePipe
+} from './pipes';
 
 import {
   BaImageLoaderService,
@@ -67,9 +67,9 @@ const NGA_COMPONENTS = [
   // BaFullCalendar,
   BaMenuItem,
   BaMenu,
-  // BaMsgCenter,
+  BaMsgCenter,
   // BaMultiCheckbox,
-  // BaPageTop,
+  BaPageTop,
   // BaPictureUploader,
   BaSidebar,
   // BaFileUploader
@@ -82,11 +82,11 @@ const NGA_DIRECTIVES = [
   // BaCardBlur
 ];
 
-// const NGA_PIPES = [
-//   BaAppPicturePipe,
-//   BaKameleonPicturePipe,
-//   BaProfilePicturePipe
-// ];
+const NGA_PIPES = [
+  // BaAppPicturePipe,
+  // BaKameleonPicturePipe,
+  BaProfilePicturePipe
+];
 
 const NGA_SERVICES = [
   BaImageLoaderService,
@@ -102,7 +102,7 @@ const NGA_SERVICES = [
 
 @NgModule({
   declarations: [
-    // ...NGA_PIPES,
+    ...NGA_PIPES,
     ...NGA_DIRECTIVES,
     ...NGA_COMPONENTS
   ],
@@ -115,7 +115,7 @@ const NGA_SERVICES = [
     NgUploaderModule
   ],
   exports: [
-    // ...NGA_PIPES,
+    ...NGA_PIPES,
     ...NGA_DIRECTIVES,
     ...NGA_COMPONENTS
   ]

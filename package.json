@@ -35,7 +35,8 @@
     "ngx-uploader": "2.2.5",
     "animate.css": "3.5.2",
     "ionicons": "2.0.1",
-    "roboto-fontface": "0.7.0"
+    "roboto-fontface": "0.7.0",
+    "font-awesome": "4.7.0"
   },
   "devDependencies": {
     "@angular/cli": "1.0.1",
@@ -51,9 +52,9 @@
     "karma": "~1.4.1",
     "karma-chrome-launcher": "~2.0.0",
     "karma-cli": "~1.0.1",
+    "karma-coverage-istanbul-reporter": "^0.2.0",
     "karma-jasmine": "~1.1.0",
     "karma-jasmine-html-reporter": "^0.2.2",
-    "karma-coverage-istanbul-reporter": "^0.2.0",
     "protractor": "~5.1.0",
     "ts-node": "~2.0.0",
     "tslint": "~4.5.0",
