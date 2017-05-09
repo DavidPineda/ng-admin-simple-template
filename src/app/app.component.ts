@@ -17,6 +17,8 @@ import { layoutPaths } from './theme/theme.constants';
 })
 export class AppComponent {
 
+  isMenuCollapsed: boolean = false;
+
   constructor(private _state: GlobalState,
               private _imageLoader: BaImageLoaderService,
               private _spinner: BaThemeSpinner,
@@ -24,6 +26,9 @@ export class AppComponent {
               private themeConfig: BaThemeConfig) {
     themeConfig.config();
     this._loadImages();
+    this._state.subscribe('menu.isCollapsed', (isCollapsed) => {
+      this.isMenuCollapsed = isCollapsed;
+    });
   }
 
   public ngAfterViewInit(): void {

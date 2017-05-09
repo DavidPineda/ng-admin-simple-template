@@ -6,5 +6,10 @@
     "password": "Password",
     "sign_in": "Sign in",
     "forgot_password": "Forgot password?"
+  },
+  "general": {
+    "menu": {
+      "dashboard": "dashboard"
+    }
   }
 }
