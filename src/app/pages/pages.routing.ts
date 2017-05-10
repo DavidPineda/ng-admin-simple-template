@@ -13,6 +13,10 @@ export const routes: Routes = [
     loadChildren: 'app/pages/register/register.module#RegisterModule'
   },
   {
+    path: 'recover',
+    loadChildren: 'app/pages/recover/recover.module#RecoverModule'
+  },
+  {
     path: 'pages',
     component: Pages,
     children: [

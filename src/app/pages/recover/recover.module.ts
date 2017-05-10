@@ -4,8 +4,8 @@ import { AppTranslationModule } from './../../app.translation.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgaModule } from '../../theme/nga.module';
 
-import { Register } from './register.component';
-import { routing } from './register.routing';
+import { Recover } from './recover.component';
+import { routing } from './recover.routing';
 
 @NgModule({
   imports: [
@@ -17,8 +17,8 @@ import { routing } from './register.routing';
     routing
   ],
   declarations: [
-    Register
+    Recover
   ]
 })
 
-export class RegisterModule {}
+export class RecoverModule {}

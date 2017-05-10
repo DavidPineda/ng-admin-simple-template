@@ -17,6 +17,11 @@
     "password_repeat": "Repeate Password",
     "sign_up": "Sign Up"
   },
+  "recover": {
+    "title": "Recover Password",
+    "email": "email",
+    "recover": "Recover Password"
+  },
   "general": {
     "menu": {
       "dashboard": "dashboard"
