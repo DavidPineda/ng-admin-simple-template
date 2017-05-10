@@ -39,6 +39,14 @@
   }
 }
 
+.input-group {
+  span {
+    background-color: $input-background;
+    border-color: $border;
+    color: $border;
+  }
+}
+
 .form-control {
   color: $content-text;
   @include placeholderStyle($content-text, 0.7);
@@ -329,6 +337,11 @@ label.custom-input-danger {
     &:focus {
       box-shadow: none;
       border-color: $focusColor;
+    }
+  }
+  .input-group {
+    span {
+      border-color: $color;
     }
   }
   label.custom-checkbox {

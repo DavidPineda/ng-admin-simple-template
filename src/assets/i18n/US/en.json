@@ -1,11 +1,21 @@
 {
   "login": {
-    "title": "Sign in to atp-admin",
-    "signup_link": "New to atp-admin? Sign up!",
+    "title": "Sign in to ng-st",
+    "signup_link": "New to ng-st? Sign up!",
     "email": "Email",
     "password": "Password",
     "sign_in": "Sign in",
     "forgot_password": "Forgot password?"
+  },
+  "register": {
+    "title": "Register in to ng-st",
+    "sigin_link": "Already have an ng-st account? Sign in!",
+    "first_name": "First Name",
+    "last_name": "Last Name",
+    "email": "Email",
+    "password": "Password",
+    "password_repeat": "Repeate Password",
+    "sign_up": "Sign Up"
   },
   "general": {
     "menu": {

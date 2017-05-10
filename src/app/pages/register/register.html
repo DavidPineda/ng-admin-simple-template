@@ -1,0 +1,50 @@
+<div class="auth-main">
+  <div class="auth-block">
+    <h1 translate>{{'register.title'}}</h1>
+    <a routerLink="/login" class="auth-link" translate>{{'register.sigin_link'}}</a>
+    <form [formGroup]="form" (ngSubmit)="onSubmit(form.value)" class="form-horizontal">
+      <div class="form-group" [ngClass]="{'has-error': (!firstName.valid && firstName.touched), 'has-success': (firstName.valid && firstName.touched)}">
+        <div class="input-group">
+          <span class="input-group-addon"><i class="fa fa-user-circle" aria-hidden="true"></i></span>
+          <input [formControl]="firstName" type="text" class="form-control" id="inputName3" placeholder="{{'register.first_name' | translate}}">
+        </div>
+      </div>
+      <div class="form-group" [ngClass]="{'has-error': (!lastName.valid && lastName.touched), 'has-success': (lastName.valid && lastName.touched)}">
+        <div class="input-group">
+          <span class="input-group-addon"><i class="fa fa-user-circle" aria-hidden="true"></i></span>
+          <input [formControl]="lastName" type="text" class="form-control" id="inputName4" placeholder="{{'register.last_name' | translate}}">
+        </div>
+      </div>
+      <div class="form-group" [ngClass]="{'has-error': (!email.valid && email.touched), 'has-success': (email.valid && email.touched)}">
+        <div class="input-group">
+          <span class="input-group-addon"><i class="fa fa-envelope" aria-hidden="true"></i></span>
+          <input [formControl]="email" type="email" class="form-control" id="inputEmail3" placeholder="{{'register.email' | translate}}">
+        </div>
+      </div>
+      <div class="form-group" [ngClass]="{'has-error': (!password.valid && password.touched), 'has-success': (password.valid && password.touched)}">
+        <div class="input-group">
+          <span class="input-group-addon"><i class="fa fa-key" aria-hidden="true"></i></span>
+          <input [formControl]="password" type="password" class="form-control" id="inputPassword3" placeholder="{{'register.password' | translate}}">
+        </div>
+      </div>
+      <div class="form-group" [ngClass]="{'has-error': (!repeatPassword.valid && repeatPassword.touched), 'has-success': (repeatPassword.valid && repeatPassword.touched)}">
+        <div class="input-group">
+          <span class="input-group-addon"><i class="fa fa-key" aria-hidden="true"></i></span>
+          <input [formControl]="repeatPassword" type="password" class="form-control" id="inputPassword4" placeholder="{{'register.password_repeat' | translate}}">
+        </div>
+        <span *ngIf="!passwords.valid && (password.touched || repeatPassword.touched)" class="help-block sub-little-text">Passwords don't match.</span>
+      </div>
+      <div class="form-group text-center">
+        <button [disabled]="!form.valid" type="submit" class="btn btn-default btn-auth" translate>{{'register.sign_up'}}</button>
+      </div>
+    </form>
+    <!--<div class="auth-sep"><span><span>or Sign up with one click</span></span></div>
+    <div class="al-share-auth">
+      <ul class="al-share clearfix">
+        <li><i class="socicon socicon-facebook" title="Share on Facebook"></i></li>
+        <li><i class="socicon socicon-twitter" title="Share on Twitter"></i></li>
+        <li><i class="socicon socicon-google" title="Share on Google Plus"></i></li>
+      </ul>
+    </div>-->
+  </div>
+</div>
