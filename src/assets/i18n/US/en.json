@@ -15,12 +15,20 @@
     "email": "Email",
     "password": "Password",
     "password_repeat": "Repeate Password",
-    "sign_up": "Sign Up"
+    "sign_up": "Sign Up",
+    "password_match_error": "Passwords don't match."
   },
   "recover": {
     "title": "Recover Password",
     "email": "email",
     "recover": "Recover Password"
+  },
+  "reset": {
+    "title": "Reset Password",
+    "password": "Password",
+    "password_repeat": "Repeate Password",
+    "reset": "Reset Password",
+    "password_match_error": "Passwords don't match."
   },
   "general": {
     "menu": {

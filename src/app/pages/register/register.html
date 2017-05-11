@@ -32,7 +32,7 @@
           <span class="input-group-addon"><i class="fa fa-key" aria-hidden="true"></i></span>
           <input [formControl]="repeatPassword" type="password" class="form-control" id="inputPassword4" placeholder="{{'register.password_repeat' | translate}}">
         </div>
-        <span *ngIf="!passwords.valid && (password.touched || repeatPassword.touched)" class="help-block sub-little-text">Passwords don't match.</span>
+        <span *ngIf="!passwords.valid && (password.touched || repeatPassword.touched)" class="help-block sub-little-text" translate>{{'register.password_match_error'}}</span>
       </div>
       <div class="form-group text-center">
         <button [disabled]="!form.valid" type="submit" class="btn btn-default btn-auth" translate>{{'register.sign_up'}}</button>

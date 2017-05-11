@@ -17,6 +17,10 @@ export const routes: Routes = [
     loadChildren: 'app/pages/recover/recover.module#RecoverModule'
   },
   {
+    path: 'reset',
+    loadChildren: 'app/pages/reset/reset.module#ResetModule'
+  },
+  {
     path: 'pages',
     component: Pages,
     children: [
