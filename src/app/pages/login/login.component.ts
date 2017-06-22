@@ -1,9 +1,11 @@
-import {Component} from '@angular/core';
-import {FormGroup, AbstractControl, FormBuilder, Validators} from '@angular/forms';
+import { Component } from '@angular/core';
+import { FormGroup, AbstractControl, FormBuilder, Validators } from '@angular/forms';
+import { LoginService } from './login.service';
 
 @Component({
   templateUrl: './login.html',
-  styleUrls: ['./login.scss']
+  styleUrls: ['./login.scss'],
+  providers: [LoginService]
 })
 
 export class Login {
@@ -13,7 +15,7 @@ export class Login {
   public password:AbstractControl;
   public submitted:boolean = false;
 
-  constructor(fb:FormBuilder) {
+  constructor(fb:FormBuilder, private loginService:LoginService) {
     this.form = fb.group({
       'email': ['', Validators.compose([Validators.required, Validators.minLength(4)])],
       'password': ['', Validators.compose([Validators.required, Validators.minLength(4)])]
@@ -26,9 +28,17 @@ export class Login {
   public onSubmit(values:Object):void {
     this.submitted = true;
     if (this.form.valid) {
-      alert('OK');
-      // your code goes here
-      // console.log(values);
+      this.loginService
+          .login({username: this.email.value, password: this.password.value})
+          .map(res => res.json())
+          .subscribe(
+            res => {
+              if (res.success) {
+                localStorage.setItem('id_token', res.data.token);
+              }
+            },
+            error => console.log(error)
+          );
     }
   }
 
