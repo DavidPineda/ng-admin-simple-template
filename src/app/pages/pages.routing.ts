@@ -2,7 +2,6 @@ import { Routes, RouterModule }  from '@angular/router';
 import { Pages } from './pages.component';
 import { ModuleWithProviders } from '@angular/core';
 
-// noinspection TypeScriptValidateTypes
 export const routes: Routes = [
   {
     path: 'login',
@@ -21,7 +20,7 @@ export const routes: Routes = [
     loadChildren: 'app/pages/reset/reset.module#ResetModule'
   },
   {
-    path: 'pages',
+    path: '',
     component: Pages,
     children: [
       { path: '', redirectTo: 'dashboard', pathMatch: 'full' },

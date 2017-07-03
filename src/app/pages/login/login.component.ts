@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { FormGroup, AbstractControl, FormBuilder, Validators } from '@angular/forms';
 import { LoginService } from './login.service';
 
@@ -10,36 +10,36 @@ import { LoginService } from './login.service';
 
 export class Login {
 
-  public form:FormGroup;
-  public email:AbstractControl;
-  public password:AbstractControl;
-  public submitted:boolean = false;
+  public form: FormGroup;
+  public username: AbstractControl;
+  public password: AbstractControl;
+  public submitted: boolean = false;
+  public loginError: boolean = false;
 
-  constructor(fb:FormBuilder, private loginService:LoginService) {
+  constructor(fb: FormBuilder, private loginService: LoginService) {
     this.form = fb.group({
-      'email': ['', Validators.compose([Validators.required, Validators.minLength(4)])],
+      'username': ['', Validators.compose([Validators.required, Validators.minLength(4)])],
       'password': ['', Validators.compose([Validators.required, Validators.minLength(4)])]
     });
 
-    this.email = this.form.controls['email'];
+    this.username = this.form.controls['username'];
     this.password = this.form.controls['password'];
   }
 
-  public onSubmit(values:Object):void {
+  public async onSubmit (obj: any) {
     this.submitted = true;
     if (this.form.valid) {
-      this.loginService
-          .login({username: this.email.value, password: this.password.value})
-          .map(res => res.json())
-          .subscribe(
-            res => {
-              if (res.success) {
-                localStorage.setItem('id_token', res.data.token);
-              }
-            },
-            error => console.log(error)
-          );
+      try {
+        let res = await this.loginService.login({username: obj.username.value, password: obj.password.value});
+        if (res.success) {
+          localStorage.setItem('id_token', res.data.token);
+        } else {
+          this.loginError = true;
+        }
+      }
+      catch (e) {
+        console.log(e.message);
+      }
     }
   }
-
 }

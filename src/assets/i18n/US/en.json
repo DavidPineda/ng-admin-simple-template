@@ -2,10 +2,11 @@
   "login": {
     "title": "Sign in to ng-st",
     "signup_link": "New to ng-st? Sign up!",
-    "email": "Email",
+    "username": "Username",
     "password": "Password",
     "sign_in": "Sign in",
-    "forgot_password": "Forgot password?"
+    "forgot_password": "Forgot password?",
+    "error_message": "User or Password Incorrect"
   },
   "register": {
     "title": "Register in to ng-st",

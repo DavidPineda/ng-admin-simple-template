@@ -2,6 +2,7 @@ import { Headers, Http, Request, RequestOptions, RequestOptionsArgs, Response, X
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 import { Router } from '@angular/router';
+import { environment } from './../../environments/environment';
 import 'rxjs/add/operator/catch';
 import 'rxjs/add/observable/throw';
 import 'rxjs/add/operator/finally';
@@ -10,7 +11,6 @@ import 'rxjs/add/operator/finally';
 
 export class HttpService extends Http {
 
-  public apiUrl: string = 'http://localhost:3000/api/';
   private authorization = '';
 
   constructor(backend: XHRBackend, defaultOptions: RequestOptions, private router: Router) {
@@ -47,7 +47,7 @@ export class HttpService extends Http {
 
   private getUrl(currentUrl) {
     if (!currentUrl.includes('/assets/'))
-      return this.apiUrl + currentUrl;
+      return environment.api.endpoint + currentUrl;
     return currentUrl;
   }
 
