@@ -8,7 +8,7 @@ var config = {
   },
   production: {
     redis: {
-      secret: 'A1S2D3$*87df#'
+      secret: process.env.REDIS_SECRET
     }
   }
 }

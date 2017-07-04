@@ -1,0 +1,1 @@
+export REDIS_SECRET=A1S2D3$*87df#

@@ -8,7 +8,7 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var path = require('path');
-// var passport = require('./passport');
+var passport = require('./passport');
 var environment = require('./config');
 
 module.exports = (app, config) => {
@@ -24,7 +24,7 @@ module.exports = (app, config) => {
       saveUninitialized: false
     })
   );
-  // app.use(passport.initialize());
-  // app.use(passport.session());
+  app.use(passport.initialize());
+  app.use(passport.session());
   app.use(flash());
 };
