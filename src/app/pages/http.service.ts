@@ -46,9 +46,9 @@ export class HttpService extends Http {
   }
 
   private getUrl(currentUrl) {
-    if (!currentUrl.includes('/assets/'))
-      return environment.api.endpoint + currentUrl;
-    return currentUrl;
+    if (currentUrl.includes('/assets/') || currentUrl.includes('/session/'))
+      return currentUrl;
+    return environment.api.endpoint + currentUrl;
   }
 
   private setHeaders(objectToSetHeadersTo: Request | RequestOptionsArgs) {
