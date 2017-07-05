@@ -9,15 +9,12 @@ export class LoginService {
 
   constructor (private http: Http) {}
 
-  public async login (credentials: any): Promise<any> {
+  public login (credentials: any): Promise<any> {
     let body = JSON.stringify(credentials);
-    try {
-      let response = await this.http.post(`${this.apiEndPoint}/login`, body).toPromise();
-      return response.json();
-    }
-    catch (e) {
-      throw e;
-    }
+    return this.http.post(`/session/login`, body).toPromise().then(res => res.json()).catch(this.handleError);
   }
 
+  public handleError(error): Promise<any> {
+    return Promise.reject(error.message);
+  }
 }

@@ -2,14 +2,13 @@
 
 const path = require('path');
 const express = require('express');
+const usersCtr = require('./../controllers/users.controller');
 
 let routes = (app, config) => {
 
   let session = express.Router();
 
-  session.route('/sigin').get((req, res) => {
-    return res.status(200).send({success: true, message:'OK'});
-  });
+  session.route('/login').post(usersCtr.login);
 
   app.use('/session', session);
 

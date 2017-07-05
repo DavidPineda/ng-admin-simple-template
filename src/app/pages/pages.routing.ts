@@ -4,11 +4,11 @@ import { ModuleWithProviders } from '@angular/core';
 
 export const routes: Routes = [
   {
-    path: 'login',
+    path: 'sigin',
     loadChildren: 'app/pages/login/login.module#LoginModule'
   },
   {
-    path: 'register',
+    path: 'sigup',
     loadChildren: 'app/pages/register/register.module#RegisterModule'
   },
   {
@@ -20,11 +20,11 @@ export const routes: Routes = [
     loadChildren: 'app/pages/reset/reset.module#ResetModule'
   },
   {
-    path: '',
+    path: 'pages',
     component: Pages,
     children: [
       { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
-      { path: 'dashboard', loadChildren: './dashboard/dashboard.module#DashboardModule' },
+      { path: 'dashboard', loadChildren: './dashboard/dashboard.module#DashboardModule' }
     ]
   }
 ];
