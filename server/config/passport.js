@@ -3,7 +3,6 @@
 var passport = require('passport');
 var passportLocal = require('passport-local');
 var LocalStrategy = passportLocal.Strategy;
-var request = require('request-promise');
 var config = require('./config');
 
 passport.serializeUser(function (data, done) {
