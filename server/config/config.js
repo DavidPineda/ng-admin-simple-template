@@ -4,11 +4,17 @@ var config = {
   development: {
     redis: {
       secret: 'nextapp'
+    },
+    deploy: {
+      port: 9092
     }
   },
   production: {
     redis: {
       secret: process.env.REDIS_SECRET
+    },
+    deploy: {
+      port: 9092
     }
   }
 }
