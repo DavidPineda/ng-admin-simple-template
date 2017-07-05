@@ -35,7 +35,6 @@ export class Login {
         let res = await this.loginService.login({username: values.username, password: values.password});
         console.log(res);
         if (res.success) {
-          // localStorage.setItem('id_token', res.data.token);
           this.router.navigate(['/pages']);
         } else {
           this.loginError = true;

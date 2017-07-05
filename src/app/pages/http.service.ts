@@ -11,8 +11,6 @@ import 'rxjs/add/operator/finally';
 
 export class HttpService extends Http {
 
-  private authorization = '';
-
   constructor(backend: XHRBackend, defaultOptions: RequestOptions, private router: Router) {
     super(backend, defaultOptions);
   }
@@ -27,7 +25,7 @@ export class HttpService extends Http {
     return this.interceptResponse(request, options);
   }
 
-  private configureRequest(request: string | Request, options: RequestOptionsArgs) {
+  private configureRequest (request: string | Request, options: RequestOptionsArgs) {
     if (typeof request === 'string') {
       request = this.getUrl(request);
       this.setHeaders(options);
@@ -37,7 +35,7 @@ export class HttpService extends Http {
     }
   }
 
-  private interceptResponse(request: string | Request, options: RequestOptionsArgs): Observable<Response> {
+  private interceptResponse (request: string | Request, options: RequestOptionsArgs): Observable<Response> {
     const observableRequest = super
       .request(request, options)
       .catch(this.onCatch())
@@ -45,32 +43,31 @@ export class HttpService extends Http {
     return observableRequest;
   }
 
-  private getUrl(currentUrl) {
-    if (currentUrl.includes('/assets/') || currentUrl.includes('/session/'))
-      return currentUrl;
-    return environment.api.endpoint + currentUrl;
+  private getUrl (currentUrl) {
+    // if (currentUrl.includes('/assets/') || currentUrl.includes('/session/'))
+    return currentUrl;
+    // return environment.api.endpoint + currentUrl;
   }
 
-  private setHeaders(objectToSetHeadersTo: Request | RequestOptionsArgs) {
+  private setHeaders (objectToSetHeadersTo: Request | RequestOptionsArgs) {
     const headers = objectToSetHeadersTo.headers;
     headers.set('Content-Type', 'application/json');
-    headers.set('Authorization', this.authorization);
   }
 
   private onCatch() {
     return (res: Response) => {
       if (this.esErrorDeSeguridad(res)) {
-        this.router.navigate(['pages/login']);
+        this.router.navigate(['/login']);
       }
       return Observable.throw(res);
     };
   }
 
-  private esErrorDeSeguridad(res) {
+  private esErrorDeSeguridad (res) {
     return res.status === 401 || res.status === 403 || res.status === 419;
   }
 
-  private onFinally() {
+  private onFinally () {
     return () => console.log('request end');
   }
 

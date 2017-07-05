@@ -2,15 +2,15 @@
 
 const path = require('path');
 const express = require('express');
-const usersCtr = require('./../controllers/users.controller');
+const authCtrl = require('./../controllers/auth.controller');
 
 let routes = (app, config) => {
 
-  let session = express.Router();
+  let auth = express.Router();
 
-  session.route('/login').post(usersCtr.login);
+  auth.route('login').post(authCtrl.login);
 
-  app.use('/session', session);
+  app.use('/', auth);
 
   app.get('*', (req, res) => {
     res.sendFile(path.join(config.rootPath, 'dist/index.html'));

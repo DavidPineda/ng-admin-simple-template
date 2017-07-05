@@ -1,8 +1,6 @@
 'use strict';
 
 var passport = require('./../config/passport');
-// var config = require('./../config/config');
-// var utils = require('./../config/utils');
 
 function login (req, res, next) {
   passport.authenticate('local', function (err, user, info) {
