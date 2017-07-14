@@ -3,24 +3,25 @@ import { Pages } from './pages.component';
 import { ModuleWithProviders } from '@angular/core';
 
 export const routes: Routes = [
+  { path: '', redirectTo: 'sigin', pathMatch: 'full' },
   {
     path: 'sigin',
-    loadChildren: 'app/pages/login/login.module#LoginModule'
+    loadChildren: './login/login.module#LoginModule'
   },
   {
     path: 'sigup',
-    loadChildren: 'app/pages/register/register.module#RegisterModule'
+    loadChildren: './register/register.module#RegisterModule'
   },
   {
     path: 'recover',
-    loadChildren: 'app/pages/recover/recover.module#RecoverModule'
+    loadChildren: './recover/recover.module#RecoverModule'
   },
   {
     path: 'reset/:id',
-    loadChildren: 'app/pages/reset/reset.module#ResetModule'
+    loadChildren: './reset/reset.module#ResetModule'
   },
   {
-    path: 'pages',
+    path: '',
     component: Pages,
     children: [
       { path: '', redirectTo: 'dashboard', pathMatch: 'full' },

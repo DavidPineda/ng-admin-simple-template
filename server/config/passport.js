@@ -4,9 +4,14 @@ var passport = require('passport');
 var passportLocal = require('passport-local');
 var LocalStrategy = passportLocal.Strategy;
 var config = require('./config');
+var utils = require('./../utils');
+var User = require('armatupaqueteclient').User;
+
+var Client = new User({endpoint: config.api.endpoint});
 
 passport.serializeUser(function (data, done) {
-  done(null, data);
+  data.data.user.token = data.data.token;
+  done(null, data.data.user);
 });
 
 passport.deserializeUser(function (data, done) {
@@ -14,11 +19,11 @@ passport.deserializeUser(function (data, done) {
 });
 
 passport.use('local', new LocalStrategy(function (username, password, done) {
-  // TODO: la petición debe ser generada mediante un cliente
-  // Si es correcto el login de usuario retornar
-  // return done(null, data);
-  // Si no es correcta
-  // return done(null, 'Mensaje Error');
+  let credentials = { username, password: utils.encrypt(password) };
+  Client.login(credentials, function (err, data) {
+    if (err) return done(null, err.message);
+    return done(null, data);
+  });
 }));
 
 module.exports = passport;

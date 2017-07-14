@@ -7,6 +7,9 @@ var config = {
     },
     deploy: {
       port: 9092
+    },
+    api: {
+      endpoint: 'http://localhost:3000/api'
     }
   },
   production: {
@@ -15,6 +18,9 @@ var config = {
     },
     deploy: {
       port: 9092
+    },
+    api: {
+      endpoint: 'http://localhost:3000/api'
     }
   }
 }

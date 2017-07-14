@@ -6,7 +6,15 @@ import { routing } from './pages.routing';
 import { NgaModule } from '../theme/nga.module';
 import { AppTranslationModule } from '../app.translation.module';
 import { Pages } from './pages.component';
-import { HttpService } from './http.service';
+import { HttpService, AuthService } from './services';
+
+const APP_PROVIDERS = [
+  {
+    provide: Http,
+    useClass: HttpService
+  },
+  AuthService
+]
 
 @NgModule({
   imports: [
@@ -16,10 +24,7 @@ import { HttpService } from './http.service';
     routing
   ],
   providers: [
-    {
-      provide: Http,
-      useClass: HttpService
-    }
+    ...APP_PROVIDERS
   ],
   declarations: [
     Pages

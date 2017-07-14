@@ -2,7 +2,7 @@ import { Headers, Http, Request, RequestOptions, RequestOptionsArgs, Response, X
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 import { Router } from '@angular/router';
-import { environment } from './../../environments/environment';
+import { environment } from './../../../environments/environment';
 import 'rxjs/add/operator/catch';
 import 'rxjs/add/observable/throw';
 import 'rxjs/add/operator/finally';
