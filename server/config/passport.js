@@ -5,13 +5,9 @@ var passportLocal = require('passport-local');
 var LocalStrategy = passportLocal.Strategy;
 var config = require('./config');
 var utils = require('./../utils');
-var User = require('armatupaqueteclient').User;
-
-var Client = new User({endpoint: config.api.endpoint});
 
 passport.serializeUser(function (data, done) {
-  data.data.user.token = data.data.token;
-  done(null, data.data.user);
+  done(null, data);
 });
 
 passport.deserializeUser(function (data, done) {
@@ -19,11 +15,10 @@ passport.deserializeUser(function (data, done) {
 });
 
 passport.use('local', new LocalStrategy(function (username, password, done) {
-  let credentials = { username, password: utils.encrypt(password) };
-  Client.login(credentials, function (err, data) {
-    if (err) return done(null, err.message);
-    return done(null, data);
-  });
+  /* Utilizar un cliente que permita validar las credenciales del usuario */
+  /* Si existe un error "return done(null, err.message);" */
+  /* Si las credenciales no son correctas "return done(null, 'Usuario o Password Incorrecto');" */
+  /* Si el proceso es correcto "return done(null, data);" */
 }));
 
 module.exports = passport;
