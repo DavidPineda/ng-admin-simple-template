@@ -36,7 +36,11 @@ const APP_PROVIDERS = [
     PagesModule,
     routing
   ],
-  providers: [APP_PROVIDERS],
-  bootstrap: [AppComponent]
+  providers: [
+    ...APP_PROVIDERS
+  ],
+  bootstrap: [
+    AppComponent
+  ]
 })
 export class AppModule { }
