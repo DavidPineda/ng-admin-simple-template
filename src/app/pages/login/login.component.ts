@@ -2,7 +2,7 @@ import { Component, Input } from '@angular/core';
 import { FormGroup, AbstractControl, FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 
-import { AuthService } from './../services';
+import { AuthService } from './../../services';
 
 @Component({
   templateUrl: './login.html',

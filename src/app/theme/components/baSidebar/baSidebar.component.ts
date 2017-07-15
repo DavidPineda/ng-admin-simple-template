@@ -1,5 +1,5 @@
 import {Component, ElementRef, HostListener} from '@angular/core';
-import {GlobalState} from '../../../global.state';
+import {GlobalState} from './../../../services';
 import {layoutSizes} from '../../../theme';
 
 @Component({

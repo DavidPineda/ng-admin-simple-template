@@ -1,7 +1,7 @@
 import { Component, ViewContainerRef } from '@angular/core';
 import * as $ from 'jquery';
 
-import { GlobalState } from './global.state';
+import { GlobalState } from './services';
 import { BaImageLoaderService, BaThemePreloader, BaThemeSpinner } from './theme/services';
 import { BaThemeConfig } from './theme/theme.config';
 import { layoutPaths } from './theme/theme.constants';

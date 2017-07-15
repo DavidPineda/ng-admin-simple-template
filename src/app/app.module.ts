@@ -3,25 +3,23 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { RouterModule } from '@angular/router';
+import { Http } from '@angular/http';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { routing } from './app.routing';
 import { AppComponent } from './app.component';
-import { GlobalState } from './global.state';
+import { GlobalState, HttpService, AuthService } from './services';
 import { NgaModule } from './theme/nga.module';
 import { PagesModule } from './pages/pages.module';
 
-// Application wide providers
 const APP_PROVIDERS = [
-  // AppState,
-  GlobalState
+  GlobalState,
+  AuthService,
+  {
+    provide: Http,
+    useClass: HttpService
+  },
 ];
-
-// export type StoreType = {
-//   state: InternalStateType,
-//   restoreInputValues: () => void,
-//   disposeOldHosts: () => void
-// };
 
 @NgModule({
   declarations: [

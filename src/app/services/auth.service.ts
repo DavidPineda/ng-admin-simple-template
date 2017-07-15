@@ -25,6 +25,10 @@ export class AuthService implements CanActivate {
     return this.http.post(`${this.apiEndPoint}/login`, body).toPromise().then(res => res.json()).catch(this.handleError);
   }
 
+  public logout (): void {
+    this.http.get(`${this.apiEndPoint}/logout`).toPromise().then(() => this.router.navigate(['/'])).catch(this.handleError);
+  }
+
   public handleError(error): Promise<any> {
     return Promise.reject(error.message);
   }
