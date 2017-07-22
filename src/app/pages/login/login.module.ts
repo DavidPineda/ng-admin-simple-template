@@ -4,7 +4,6 @@ import { AppTranslationModule } from '../../app.translation.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgaModule } from '../../theme/nga.module';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-
 import { Login } from './login.component';
 import { routing } from './login.routing';
 

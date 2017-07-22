@@ -1,30 +1,44 @@
-import { Component, Input } from '@angular/core';
-import { FormGroup, AbstractControl, FormBuilder, Validators } from '@angular/forms';
+import { Component, Input, OnInit } from '@angular/core';
+import { FormGroup, FormControl, FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-
+import { ValidationExtensions } from 'ng2-cli-validation-messages/ng2-fmv';
 import { AuthService } from './../../services';
+
 
 @Component({
   templateUrl: './login.html',
   styleUrls: ['./login.scss']
 })
 
-export class Login {
+export class Login implements OnInit {
 
   public form: FormGroup;
-  public username: AbstractControl;
-  public password: AbstractControl;
+  public username: FormControl;
+  public password: FormControl;
   public submitted: boolean = false;
   public loginError: boolean = false;
 
-  constructor(fb: FormBuilder, private router: Router, private authService: AuthService) {
-    this.form = fb.group({
-      'username': ['', Validators.compose([Validators.required, Validators.minLength(4)])],
-      'password': ['', Validators.compose([Validators.required, Validators.minLength(4)])]
-    });
+  constructor(private fb: FormBuilder, private router: Router, private authService: AuthService) {}
 
-    this.username = this.form.controls['username'];
-    this.password = this.form.controls['password'];
+  public ngOnInit(): void {
+    this.formBuild();
+  }
+
+  public formBuild(): void {
+    this.username = this.fb.control('', [
+      ValidationExtensions.required(),
+      ValidationExtensions.minLength(4)
+    ]);
+
+    this.password = this.fb.control('', [
+      ValidationExtensions.required(),
+      ValidationExtensions.minLength(4)
+    ]);
+
+    this.form = this.fb.group({
+      username: this.username,
+      password: this.password
+    });
   }
 
   public async onSubmit (values: any) {

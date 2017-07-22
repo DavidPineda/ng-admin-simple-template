@@ -205,7 +205,7 @@ textarea.form-control {
 }
 
 label.custom-radio {
-  @padding-right: 0;
+  padding-right: 0;
   padding-left: 0;
   margin-bottom: 0;
   & > input {
@@ -343,6 +343,7 @@ label.custom-input-danger {
     span {
       border-color: $color;
     }
+    margin-bottom: 0;
   }
   label.custom-checkbox {
     color: $color;
@@ -363,6 +364,13 @@ label.custom-input-danger {
   .input-group-addon {
     background-color: $color;
     color: $label-text;
+  }
+  ng2-mdf-validation-message  span {
+    display: block;
+    color: $color;
+    margin: 5px 0;
+    float: right;
+    font-size: 15px;
   }
 }
 
