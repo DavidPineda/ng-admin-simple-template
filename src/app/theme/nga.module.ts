@@ -29,6 +29,8 @@ import {
   BaThemeRun
 } from './directives';
 
+import { BaCardBlur } from './components/baCard/baCardBlur.directive';
+
 import {
   BaProfilePicturePipe
 } from './pipes';
@@ -57,7 +59,8 @@ const NGA_COMPONENTS = [
 const NGA_DIRECTIVES = [
   BaScrollPosition,
   BaSlimScroll,
-  BaThemeRun
+  BaThemeRun,
+  BaCardBlur
 ];
 
 const NGA_PIPES = [
