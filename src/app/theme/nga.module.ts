@@ -20,7 +20,8 @@ import {
   BaMsgCenter,
   BaPageTop,
   BaSidebar,
-  BaCard
+  BaCard,
+  BaContentTop
 } from './components';
 
 import {
@@ -53,7 +54,8 @@ const NGA_COMPONENTS = [
   BaMsgCenter,
   BaPageTop,
   BaSidebar,
-  BaCard
+  BaCard,
+  BaContentTop
 ];
 
 const NGA_DIRECTIVES = [
